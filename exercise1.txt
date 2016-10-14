@@ -8,7 +8,7 @@ div.container {
 }
 
 header, footer {
-    padding: 1em;c
+    padding: 1em;czfsdf
     background-color: pink;
     clear: left;
     text-align: center;
