@@ -65,8 +65,14 @@ article {
 	font-family: comic sans ms;
 }
 div.form {
+<<<<<<< HEAD
  padding: 70px 0;
     border: 3px solid green;
+=======
+padding: 70px 0;
+    border: 3px solid green;
+
+>>>>>>> 459e72818a0906bdc684df9baef92ae895a30c2f
 }
 </style>
 </head>
@@ -117,9 +123,14 @@ div.form {
 </div>
 </div>
 
+
 <div class="form"> 
+
+
+<div class="form">
+
 <?php
-// define variables and set to empty values
+
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
 $name = $email = $gender = $comment = $website = "";
 
@@ -128,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nameErr = "Name is required";
   } else {
     $name = test_input($_POST["name"]);
-    // check if name only contains letters and whitespace
+
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
       $nameErr = "Only letters and white space allowed"; 
     }
@@ -138,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailErr = "Email is required";
   } else {
     $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
+ 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Invalid email format"; 
     }
@@ -148,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $website = "";
   } else {
     $website = test_input($_POST["website"]);
-    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
+
     if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
       $websiteErr = "Invalid URL"; 
     }
@@ -175,7 +186,11 @@ function test_input($data) {
 }
 ?>
 
+
 <h2>PHP Form </h2>
+
+<h2>PHP Form</h2>
+
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   Name: <input type="text" name="name" value="<?php echo $name;?>">
@@ -195,7 +210,7 @@ function test_input($data) {
   <span class="error">* <?php echo $genderErr;?></span>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
-  
+
 </form>
 
 <?php
@@ -221,11 +236,20 @@ echo $gender;
 <a href="https://www.instagram.com/">
   <img src="insta.png" style="width:42px;height:42px;border:0;"> 
 </a>
+
+<div class="container2"> 
+
+
 </div>
 <footer>My flesh and my heart may fail, but God is the strength of my heart and my portion forever. </footer>
 </div>
 </div>
 
+
 </body>
 </html>
+
+
+</html>
+</body>
 
