@@ -65,14 +65,8 @@ article {
 	font-family: comic sans ms;
 }
 div.form {
-<<<<<<< HEAD
  padding: 70px 0;
     border: 3px solid green;
-=======
-padding: 70px 0;
-    border: 3px solid green;
-
->>>>>>> 459e72818a0906bdc684df9baef92ae895a30c2f
 }
 </style>
 </head>
@@ -124,15 +118,13 @@ padding: 70px 0;
 </div>
 
 
-<div class="form"> 
-
 
 <div class="form">
 
 <?php
 
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $nicknameErr = $emailErr = $genderErr = $cpnumErr = $websiteErr = "";
+$name = $nickname = $email = $address = $gender = $cpnum = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -143,6 +135,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
       $nameErr = "Only letters and white space allowed"; 
     }
+  }
+  if (empty($_POST["nickname"])) {
+    $nicknameErr = "Nickame is required";
+  } else {
+    $nickname = test_input($_POST["nickname"]);
+
+    if (!preg_match("/^[a-zA-Z ]*$/",$nickname)) {
+      $nicknameErr = "Only letters and white space allowed"; 
+    }
+  }
+    if (empty($_POST["address"])) {
+    $address = "";
+  } else {
+    $address = test_input($_POST["address"]);
   }
   
   if (empty($_POST["email"])) {
@@ -162,6 +168,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
       $websiteErr = "Invalid URL"; 
+    }
+  }
+   if (empty($_POST["cpnum"])) {
+    $cpnumErr = "Cellphone number is required";
+  } else {
+    $cpnum = test_input($_POST["cpnum"]);
+
+    if (!preg_match("/^[0-9]*$/",$cpnum)) {
+      $cpnumErr = "Only numerical values are allowed"; 
     }
   }
 
@@ -187,7 +202,6 @@ function test_input($data) {
 ?>
 
 
-<h2>PHP Form </h2>
 
 <h2>PHP Form</h2>
 
@@ -196,13 +210,21 @@ function test_input($data) {
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
+  Nickname: <input type="text" name="nickname" value="<?php echo $nickname;?>">
+  <span class="error">* <?php echo $nicknameErr;?></span>
+  <br><br>
   E-mail: <input type="text" name="email" value="<?php echo $email;?>">
   <span class="error">* <?php echo $emailErr;?></span>
+  <br><br>
+  Home Address: <textarea name="address" rows="5" cols="40"><?php echo $address;?></textarea>
   <br><br>
   Website: <input type="text" name="website" value="<?php echo $website;?>">
   <span class="error"><?php echo $websiteErr;?></span>
   <br><br>
   Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+  <br><br>
+  Cellphone Number: <input type="text" name="cpnum" value="<?php echo $cpnum;?>">
+  <span class="error">* <?php echo $cpnumErr;?></span>
   <br><br>
   Gender:
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
@@ -219,14 +241,20 @@ echo $name;
 echo "<br>";
 echo $email;
 echo "<br>";
+echo $address;
+echo "<br>";
 echo $website;
 echo "<br>";
 echo $comment;
 echo "<br>";
+echo $cpnum;
+echo "<br>";
 echo $gender;
+echo "<br>";
+echo $nickname;
 ?>
 </div>
-<div>
+<div class="container">
 <a href="https://www.facebook.com/">
   <img src="fb.png" style="width:42px;height:42px;border:0;"> 
 </a> 
