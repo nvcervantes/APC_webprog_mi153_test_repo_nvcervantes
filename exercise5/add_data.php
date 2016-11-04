@@ -16,10 +16,6 @@ if(isset($_POST['btn-save']))
         
         // sql query for inserting data into database
  
-		$sql_query="SELECT * FROM users";
-		$result_set=mysqli_query($con,$sql_query);
-	
-
 }
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
