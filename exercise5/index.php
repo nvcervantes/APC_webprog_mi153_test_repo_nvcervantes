@@ -1,14 +1,14 @@
 <?php
 include_once 'dbconfig.php';
 
-// delete condition
+// del condition
 if(isset($_GET['delete_id']))
 {
 $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
  mysqli_query($con,$sql_query);
  header("Location: $_SERVER[PHP_SELF]");
 }
-// delete condition
+// del condition
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
