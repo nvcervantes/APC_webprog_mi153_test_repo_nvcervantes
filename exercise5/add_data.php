@@ -3,7 +3,7 @@
 include_once 'dbconfig.php';
 if(isset($_POST['btn-save']))
 {
- // variables for input data
+ // var for input data
  $name = $_POST['name'];
  $email = $_POST['email'];
  $address = $_POST['address'];
