@@ -9,13 +9,18 @@ if(isset($_GET['edit_id']))
 if(isset($_POST['btn-update']))
 {
  // variables for input data
- $first_name = $_POST['first_name'];
- $last_name = $_POST['last_name'];
- $city_name = $_POST['city_name'];
+ $name = $_POST['name'];
+ $email = $_POST['email'];
+ $address = $_POST['address'];
+ $website = $_POST['website'];
+ $comment = $_POST['comment'];
+ $cpnum = $_POST['cpnum'];
+ $gender = $_POST['gender'];
+ $nickname = $_POST['nickname'];
  // variables for input data
 
  // sql query for update data into database
- $sql_query = "UPDATE users SET first_name='$first_name',last_name='$last_name',user_city='$city_name' WHERE user_id=".$_GET['edit_id'];
+ $sql_query = "UPDATE users SET name='$name',email='$email',address='$address',website='$website', comment='$comment',cpnum='$cpnum', gender='$gender', nickname='$nickname' WHERE user_id=".$_GET['edit_id'];
  // sql query for update data into database
  
  // sql query execution function
@@ -64,13 +69,28 @@ if(isset($_POST['btn-cancel']))
     <form method="post">
     <table align="center">
     <tr>
-    <td><input type="text" name="first_name" placeholder="First Name" value="<?php echo $fetched_row['first_name']; ?>" required /></td>
+    <td><input type="text" name="name" placeholder="Name" value="<?php echo $fetched_row['name']; ?>" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="last_name" placeholder="Last Name" value="<?php echo $fetched_row['last_name']; ?>" required /></td>
+    <td><input type="text" name="email" placeholder="Email" value="<?php echo $fetched_row['email']; ?>" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['user_city']; ?>" required /></td>
+    <td><input type="text" name="address" placeholder="Address" value="<?php echo $fetched_row['address']; ?>" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="website" placeholder="Website" value="<?php echo $fetched_row['website']; ?>" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="comment" placeholder="Comment" value="<?php echo $fetched_row['comment']; ?>" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="cpnum" placeholder="Cellphone Number" value="<?php echo $fetched_row['cpnum']; ?>" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="gender" placeholder="Gender" value="<?php echo $fetched_row['gender']; ?>" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="nickname" placeholder="Nickname" value="<?php echo $fetched_row['nickname']; ?>" required /></td>
     </tr>
     <tr>
     <td>
