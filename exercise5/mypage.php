@@ -9,8 +9,6 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
-
-
 div.container {
     width: 100%;
     border: 1px solid black;
@@ -117,12 +115,8 @@ div.form {
 </div>
 </div>
 
-
-
 <div class="form">
-
 <?php
-
 $nameErr = $nicknameErr = $emailErr = $genderErr = $cpnumErr = $websiteErr = "";
 $name = $nickname = $email = $address = $gender = $cpnum = $comment = $website = "";
 
@@ -200,8 +194,6 @@ function test_input($data) {
   return $data;
 }
 ?>
-
-
 
 <h2>PHP Form</h2>
 
