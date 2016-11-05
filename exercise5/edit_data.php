@@ -8,7 +8,7 @@ if(isset($_GET['edit_id']))
 }
 if(isset($_POST['btn-update']))
 {
- // vars for input data
+ // var for input data
  $name = $_POST['name'];
  $email = $_POST['email'];
  $address = $_POST['address'];
