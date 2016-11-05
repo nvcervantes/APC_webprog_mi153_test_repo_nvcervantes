@@ -12,8 +12,7 @@ if(isset($_POST['btn-save']))
  $cpnum = $_POST['cpnum'];
  $gender = $_POST['gender'];
  $nickname = $_POST['nickname'];
- 
- // variables for input data
+
  
  // sql query for inserting data into database
  
