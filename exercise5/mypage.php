@@ -117,6 +117,14 @@ div.form {
 
 <div class="form">
 <?php
+ $name = $_POST['name'];
+ $email = $_POST['email'];
+ $address = $_POST['address'];
+ $website = $_POST['website'];
+ $comment = $_POST['comment'];
+ $cpnum = $_POST['cpnum'];
+ $gender = $_POST['gender'];
+ $nickname = $_POST['nickname'];
 $nameErr = $nicknameErr = $emailErr = $genderErr = $cpnumErr = $websiteErr = "";
 $name = $nickname = $email = $address = $gender = $cpnum = $comment = $website = "";
 
