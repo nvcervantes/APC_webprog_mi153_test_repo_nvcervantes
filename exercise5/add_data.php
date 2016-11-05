@@ -12,14 +12,12 @@ if(isset($_POST['btn-save']))
  $cpnum = $_POST['cpnum'];
  $gender = $_POST['gender'];
  $nickname = $_POST['nickname'];
-
- 
+  
  // sql query for inserting data into database
  
         $sql_query = "INSERT INTO users(name,email,address, website, comment, cpnum, gender, nickname) VALUES('$name','$email','$address',$website, $comment, $cpnum, $gender, $nickname)";
  mysqli_query($con,$sql_query);
         
-        // sql query for inserting data into database
  
 }
 ?>
