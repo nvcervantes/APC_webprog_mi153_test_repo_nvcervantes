@@ -1,7 +1,7 @@
 <?php
 include_once 'dbconfig.php';
 
-// del condition
+// delete condition
 if(isset($_GET['delete_id']))
 {
 $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
