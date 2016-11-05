@@ -8,7 +8,7 @@ if(isset($_GET['edit_id']))
 }
 if(isset($_POST['btn-update']))
 {
- // variables for input data
+ // vars for input data
  $name = $_POST['name'];
  $email = $_POST['email'];
  $address = $_POST['address'];
@@ -17,7 +17,7 @@ if(isset($_POST['btn-update']))
  $cpnum = $_POST['cpnum'];
  $gender = $_POST['gender'];
  $nickname = $_POST['nickname'];
- // variables for input data
+ // vars for input data
 
  // sql query for update data into database
  $sql_query = "UPDATE users SET name='$name',email='$email',address='$address',website='$website', comment='$comment',cpnum='$cpnum', gender='$gender', nickname='$nickname' WHERE user_id=".$_GET['edit_id'];
