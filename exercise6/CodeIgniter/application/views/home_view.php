@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+
 <title>Welcome to my first CodeIgniter application.</title>
+
 <style type="text/css">
    html { 
   background: url(lastpic.jpg) no-repeat center center fixed; 
@@ -11,6 +13,7 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
 div.container {
     width: 100%;
     border: 1px solid black;
@@ -19,6 +22,7 @@ div.container {
 	clear: center;
 	font-size:large;
 }
+
 footer {
 	padding: 0.3em;
     color: white;
@@ -28,6 +32,7 @@ footer {
     font-family: french script mt;
 	font-size: 150%;
  }
+ 
 header {
     padding: 0.3em;
     color: white;
@@ -64,13 +69,18 @@ article {
 	background-color: beige;
 	font-family: comic sans ms;
 }
+
 div.form {
  padding: 70px 0;
     border: 3px solid green;
 }
+
 </style>
+
 </head>
+
 <body>
+
 <div id="container">
     <h1>Welcome to First CodeIgniter Application.</h1>
     <div id="body">
@@ -111,6 +121,7 @@ div.form {
 </div>
 <div>
 <div>
+
 <h1>Some facts about me &#9786</h1>
 						
 <p id="hobbyr">What is my favorite hobby?</p>
@@ -126,14 +137,18 @@ div.form {
 	<p></p>
 	<hr>
 </div>
+
 </div>
 <div class="container">
+
 <a href="https://www.facebook.com/">
   <img src="fb.png" style="width:42px;height:42px;border:0;"> 
 </a> 
+
 <a href="https://twitter.com/">
   <img src="twitter.png" style="width:50px;height:42px;border:0;"> 
 </a> 
+
 <a href="https://www.instagram.com/">
   <img src="insta.png" style="width:42px;height:42px;border:0;"> 
 </a>
