@@ -6,6 +6,7 @@
 <title>Welcome to my first CodeIgniter application.</title>
 
 <style type="text/css">
+
    html { 
   background: url(lastpic.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
