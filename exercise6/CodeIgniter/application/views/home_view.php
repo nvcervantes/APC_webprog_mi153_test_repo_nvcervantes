@@ -127,5 +127,24 @@ div.form {
 	<hr>
 </div>
 </div>
+<div class="container">
+<a href="https://www.facebook.com/">
+  <img src="fb.png" style="width:42px;height:42px;border:0;"> 
+</a> 
+<a href="https://twitter.com/">
+  <img src="twitter.png" style="width:50px;height:42px;border:0;"> 
+</a> 
+<a href="https://www.instagram.com/">
+  <img src="insta.png" style="width:42px;height:42px;border:0;"> 
+</a>
+
+<div class="container2"> 
+
+
+</div>
+<footer>My flesh and my heart may fail, but God is the strength of my heart and my portion forever. </footer>
+</div>
+</div>
+
 </body>
 </html>
