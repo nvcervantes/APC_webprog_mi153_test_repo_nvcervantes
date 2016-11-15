@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 
-<title>Welcome to my first CodeIgniter application.</title>
+<!--<title>Welcome to my first CodeIgniter application.</title>-->
 
 <style type="text/css">
 
@@ -82,7 +82,7 @@ div.form {
 
 <body>
 
-<div id="container">
+<!--<div id="container">
     <h1>Welcome to First CodeIgniter Application.</h1>
     <div id="body">
         <div class="gallery">
@@ -93,7 +93,7 @@ div.form {
             </ul>
         </div>
     </div>
-</div>
+</div>-->
 <div class="container">
 
 <header>
