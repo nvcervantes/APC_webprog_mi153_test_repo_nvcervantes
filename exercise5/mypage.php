@@ -1,3 +1,25 @@
+<?php
+include_once 'dbconfig.php';
+if(isset($_POST['btn-submit']))
+{
+ // var for input data
+ $name = $_POST['name'];
+ $email = $_POST['email'];
+ $address = $_POST['address'];
+ $website = $_POST['website'];
+ $comment = $_POST['comment'];
+ $cpnum = $_POST['cpnum'];
+ $gender = $_POST['gender'];
+ $nickname = $_POST['nickname'];
+  
+ // sql query for inserting data into database
+ 
+        $sql_query = "INSERT INTO users(name,email,address, website, message, cpnum, gender, nickname) VALUES('$name','$email','$address',$website, $comment, $cpnum, $gender, $nickname)";
+ mysqli_query($con,$sql_query);
+        
+ 
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -117,6 +139,7 @@ div.form {
 
 <div class="form">
 <?php
+
 $nameErr = $nicknameErr = $emailErr = $genderErr = $cpnumErr = $websiteErr = "";
 $name = $nickname = $email = $address = $gender = $cpnum = $comment = $website = "";
 
@@ -159,11 +182,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $website = "";
   } else {
     $website = test_input($_POST["website"]);
-
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-      $websiteErr = "Invalid URL"; 
-    }
   }
+  
    if (empty($_POST["cpnum"])) {
     $cpnumErr = "Cellphone number is required";
   } else {
@@ -245,6 +265,7 @@ echo $gender;
 echo "<br>";
 echo $nickname;
 ?>
+
 
 </div>
 <div class="container">
