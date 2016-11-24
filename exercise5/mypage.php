@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $nameErr = "Only letters and white space allowed"; 
     }
   }
+  
   if (empty($_POST["nickname"])) {
     $nicknameErr = "Nickame is required";
   } else {
@@ -52,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $nicknameErr = "Only letters and white space allowed"; 
     }
   }
+  
     if (empty($_POST["address"])) {
     $address = "";
   } else {
@@ -60,7 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   if (empty($_POST["email"])) {
     $emailErr = "Email is required";
-  } else {
+  } 
+  else {
     $email = test_input($_POST["email"]);
  
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -70,13 +73,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
   if (empty($_POST["website"])) {
     $website = "";
-  } else {
+  } 
+  else {
     $website = test_input($_POST["website"]);
   }
   
    if (empty($_POST["cpnum"])) {
     $cpnumErr = "Cellphone number is required";
-  } else {
+  } 
+  else {
     $cpnum = test_input($_POST["cpnum"]);
 
     if (!preg_match("/^[0-9]*$/",$cpnum)) {
@@ -86,13 +91,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (empty($_POST["comment"])) {
     $comment = "";
-  } else {
+  } 
+  else {
     $comment = test_input($_POST["comment"]);
   }
 
   if (empty($_POST["gender"])) {
     $genderErr = "Gender is required";
-  } else {
+  } 
+  else {
     $gender = test_input($_POST["gender"]);
   }
 }
@@ -104,76 +111,74 @@ function test_input($data) {
   return $data;
 }
 ?>
+
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-html { 
-  background: url(lastpic.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-div.container {
-    width: 100%;
-    border: 1px solid black;
-	color: white;
-	text-align: center;
-	clear: center;
-	font-size:large;
-}
-footer {
-	padding: 0.3em;
-    color: white;
-    background-img: lastpic.jpg;
-    clear: left;
-    text-align: center;
-    font-family: french script mt;
-	font-size: 150%;
- }
-header {
-    padding: 0.3em;
-    color: white;
-    background-img: lastpic.jpg;
-    clear: left;
-    text-align: center;
-    font-family: french script mt;
-	font-size: 150%;
-}
-
-nav {
-    float: left;
-    max-width: 160px;
-    margin: 0;
-    padding: 6em;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 1em;
-	clear: left;
-}
-			
-nav ul a {
-    text-decoration: none;	
-}
-
-article {
-    margin-left: 170px;
-    border-left: 1px gray;
-    padding: 1em;
-    overflow: hidden
-	font-size: large
-	background-color: beige;
-	font-family: comic sans ms;
-}
-div.form {
- padding: 70px 0;
-    border: 3px solid green;
-}
-</style>
+	<head>
+		<style>
+		html { 
+		background: url(lastpic.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		}
+		div.container {
+		width: 100%;
+		border: 1px solid black;
+		color: white;
+		text-align: center;
+		clear: center;
+		font-size:large;
+		}
+		footer {
+		padding: 0.3em;
+		color: white;
+		background-img: lastpic.jpg;
+		clear: left;
+		text-align: center;
+		font-family: french script mt;
+		font-size: 150%;
+		}
+		header {
+		padding: 0.3em;
+		color: white;
+		background-img: lastpic.jpg;
+		clear: left;
+		text-align: center;
+		font-family: french script mt;
+		font-size: 150%;
+		}
+		nav {
+		float: left;
+		max-width: 160px;
+		margin: 0;
+		padding: 6em;
+		}
+		nav ul {
+		list-style-type: none;
+		padding: 1em;
+		clear: left;
+		}
+		nav ul a {
+		text-decoration: none;	
+		}
+		article {
+		margin-left: 170px;
+		border-left: 1px gray;
+		padding: 1em;
+		overflow: hidden
+		font-size: large
+		background-color: beige;
+		font-family: comic sans ms;
+		}
+		div.form {
+		padding: 70px 0;
+		border: 3px solid green;
+		}
+	</style>
 </head>
+
 <body>
 
 <div class="container">
@@ -208,15 +213,20 @@ div.form {
 						
 <p id="hobbyr">What is my favorite hobby?</p>
 	<button type="button" onclick="document.getElementById('hobbyr').innerHTML = 'Reading has always been and will forever be my favorite hobby.'">Fave Hobby</button>
+	
 <p id="gp">What is my guilty pleasure?</p>
 	<button type="button" onclick="document.getElementById('gp').innerHTML = 'Definitely Chocolates.'">Guilty Pleasure...</button>
+	
 <p id="pup">What is the name of my first puppy?</p>
 	<button type="button" onclick="document.getElementById('pup').innerHTML = 'Toby. &#9829'">First Pup!</button>
+	
 <p id="cd">What is my childhood dream?</p>
 	<button type="button" onclick="document.getElementById('cd').innerHTML = 'To be a chemist.'">Childhood Dream</button>
+	
 <p id="plan">What do I want to be in the future?</p>
 	<button type="button" onclick="document.getElementById('plan').innerHTML = 'To be an accomplished person doing what I love and not settling for less.'">Ultimate Goal &#9829</button>
-	<p></p>
+	
+	
 	<hr>
 </div>
 </div>
@@ -260,6 +270,7 @@ div.form {
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
   <span class="error">* <?php echo $genderErr;?></span>
   <br><br>
+  
 	<button id="btn" type="submit" name="btn-save" onclick="location.href='index.php';"><strong>SUBMIT</strong></button>
 
 </form>
@@ -268,18 +279,25 @@ div.form {
 echo "<h2>Your Input:</h2>";
 echo $name;
 echo "<br>";
+
 echo $email;
 echo "<br>";
+
 echo $address;
 echo "<br>";
+
 echo $website;
 echo "<br>";
+
 echo $comment;
 echo "<br>";
+
 echo $cpnum;
 echo "<br>";
+
 echo $gender;
 echo "<br>";
+
 echo $nickname;
 ?>
 
@@ -289,9 +307,11 @@ echo $nickname;
 <a href="https://www.facebook.com/">
   <img src="fb.png" style="width:42px;height:42px;border:0;"> 
 </a> 
+
 <a href="https://twitter.com/">
   <img src="twitter.png" style="width:50px;height:42px;border:0;"> 
 </a> 
+
 <a href="https://www.instagram.com/">
   <img src="insta.png" style="width:42px;height:42px;border:0;"> 
 </a>
