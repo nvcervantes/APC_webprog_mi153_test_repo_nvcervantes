@@ -1,23 +1,107 @@
 <?php
 include_once 'dbconfig.php';
-if(isset($_POST['btn-submit']))
+if(isset($_POST['btn-save']))
 {
- // var for input data
+ // variables for input data
  $name = $_POST['name'];
- $email = $_POST['email'];
- $address = $_POST['address'];
- $website = $_POST['website'];
- $comment = $_POST['comment'];
- $cpnum = $_POST['cpnum'];
- $gender = $_POST['gender'];
  $nickname = $_POST['nickname'];
-  
+ $email = $_POST['email'];
+ $home = $_POST['home'];
+ $gender=$_POST['gender'];
+ $number = $_POST['number'];
+ $comment = $_POST['comment']; 
+ // variables for input data
+
  // sql query for inserting data into database
+ $sql_query = "INSERT INTO users(name,nickname,email,home,gender,number,comment) VALUES('$name','$nickname','$email','$home','$gender','$number','$comment')";
  
-        $sql_query = "INSERT INTO users(name,email,address, website, message, cpnum, gender, nickname) VALUES('$name','$email','$address',$website, $comment, $cpnum, $gender, $nickname)";
- mysqli_query($con,$sql_query);
-        
+ // sql query execution function
+ if(mysqli_query($link, $sql_query) == true)
+ {
+  ?>
+  <script type="text/javascript">
+  alert('Data Are Inserted Successfully ');
+  window.location.href='index.php';
+  </script>
+  <?php
+ }
+ else
+ {
+  ?>
+  <?php
+
+$nameErr = $nicknameErr = $emailErr = $genderErr = $cpnumErr = $websiteErr = "";
+$name = $nickname = $email = $address = $gender = $cpnum = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed"; 
+    }
+  }
+  if (empty($_POST["nickname"])) {
+    $nicknameErr = "Nickame is required";
+  } else {
+    $nickname = test_input($_POST["nickname"]);
+
+    if (!preg_match("/^[a-zA-Z ]*$/",$nickname)) {
+      $nicknameErr = "Only letters and white space allowed"; 
+    }
+  }
+    if (empty($_POST["address"])) {
+    $address = "";
+  } else {
+    $address = test_input($_POST["address"]);
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
  
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format"; 
+    }
+  }
+    
+  if (empty($_POST["website"])) {
+    $website = "";
+  } else {
+    $website = test_input($_POST["website"]);
+  }
+  
+   if (empty($_POST["cpnum"])) {
+    $cpnumErr = "Cellphone number is required";
+  } else {
+    $cpnum = test_input($_POST["cpnum"]);
+
+    if (!preg_match("/^[0-9]*$/",$cpnum)) {
+      $cpnumErr = "Only numerical values are allowed"; 
+    }
+  }
+
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+
+  if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required";
+  } else {
+    $gender = test_input($_POST["gender"]);
+  }
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
 }
 ?>
 <!DOCTYPE html>
@@ -111,10 +195,10 @@ div.form {
   <p>A bookworm whose favorite nocturnal hobby is reading.</p>
   <p> I am Shierene Cervantes, called Shie by my close friends, whom you cannot really know well without spending some time to get along with. Whenever I ask my friends what their first impressions to me were, they say either I do not look someone you could easily approach, an extremely girly person who only make friends to others in the same level as I am, a person who is so conscious about her appearance, and someone who gets easily annoyed. When people start to know who I am, most of them say that I am a sweet and very reserved girl who is lady-like in every way. </p>
   <p>However, there is more to me than just that. Unbelievable to some, my close friends know that once you get to really know me, your first impression would definitely change into a new perspective that is quite the opposite as your first. According to them, I am really a girly girl who has something you never thought I have to show off once I get really close to a person, and they are probably referring to my childlike attitude whenever I am with people I am comfortable with. They also say that I can easily get along with different kinds of people for I do not really choose the people I want to be friends with.
-</p>
-<p>Reading books, playing the piano, listening to really good music, seeing little children happy, shopping after a very stressful midterm or final week at school, getting high grades and making my parents proud are some of the things that can really make me happy. I have read a lot of books that inspired me in a lot of different ways and I find reading books really an interesting way to take you places you have never been.
-</p>
-<p>I am rarely impressed but eternally fascinated by everything. I know that it seems a bit absurd, but most people find me quite difficult to impress, and perhaps that is because my family always reminds to always strive to be the best even when I think I am already good enough. Nevertheless, I believe that everything God created is wonderful and worth appreciating.</p>
+	</p>
+	<p>Reading books, playing the piano, listening to really good music, seeing little children happy, shopping after a very stressful midterm or final week at school, getting high grades and making my parents proud are some of the things that can really make me happy. I have read a lot of books that inspired me in a lot of different ways and I find reading books really an interesting way to take you places you have never been.
+	</p>
+	<p>I am rarely impressed but eternally fascinated by everything. I know that it seems a bit absurd, but most people find me quite difficult to impress, and perhaps that is because my family always reminds to always strive to be the best even when I think I am already good enough. Nevertheless, I believe that everything God created is wonderful and worth appreciating.</p>
   <p>Hello, you!</p>
   <hr>
 </div>
@@ -138,112 +222,45 @@ div.form {
 </div>
 
 <div class="form">
-<?php
 
-$nameErr = $nicknameErr = $emailErr = $genderErr = $cpnumErr = $websiteErr = "";
-$name = $nickname = $email = $address = $gender = $cpnum = $comment = $website = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed"; 
-    }
-  }
-  if (empty($_POST["nickname"])) {
-    $nicknameErr = "Nickame is required";
-  } else {
-    $nickname = test_input($_POST["nickname"]);
-
-    if (!preg_match("/^[a-zA-Z ]*$/",$nickname)) {
-      $nicknameErr = "Only letters and white space allowed"; 
-    }
-  }
-    if (empty($_POST["address"])) {
-    $address = "";
-  } else {
-    $address = test_input($_POST["address"]);
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
- 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format"; 
-    }
-  }
-    
-  if (empty($_POST["website"])) {
-    $website = "";
-  } else {
-    $website = test_input($_POST["website"]);
-  }
-  
-   if (empty($_POST["cpnum"])) {
-    $cpnumErr = "Cellphone number is required";
-  } else {
-    $cpnum = test_input($_POST["cpnum"]);
-
-    if (!preg_match("/^[0-9]*$/",$cpnum)) {
-      $cpnumErr = "Only numerical values are allowed"; 
-    }
-  }
-
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
 
 <h2>PHP Form</h2>
 
 <p><span class="error">* required field.</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+ 
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
+  
   Nickname: <input type="text" name="nickname" value="<?php echo $nickname;?>">
   <span class="error">* <?php echo $nicknameErr;?></span>
   <br><br>
+  
   E-mail: <input type="text" name="email" value="<?php echo $email;?>">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
+  
   Home Address: <textarea name="address" rows="5" cols="40"><?php echo $address;?></textarea>
   <br><br>
+  
   Website: <input type="text" name="website" value="<?php echo $website;?>">
   <span class="error"><?php echo $websiteErr;?></span>
   <br><br>
+  
   Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
   <br><br>
+  
   Cellphone Number: <input type="text" name="cpnum" value="<?php echo $cpnum;?>">
   <span class="error">* <?php echo $cpnumErr;?></span>
   <br><br>
+  
   Gender:
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
   <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
   <span class="error">* <?php echo $genderErr;?></span>
   <br><br>
-  <input type="submit" name="submit" value="Submit">  
+	<button id="btn" type="submit" name="btn-save" onclick="location.href='index.php';"><strong>SUBMIT</strong></button>
 
 </form>
 
