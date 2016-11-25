@@ -10,12 +10,39 @@ $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
 }
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<style>
+html { 
+  background: url(lastpic.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+div.container {
+    width: 100%;
+    border: 1px solid black;
+	color: white;
+	text-align: center;
+	clear: center;
+	font-size:large;
+}
+
+header {
+    padding: 0.3em;
+    color: white;
+    background-img: lastpic.jpg;
+    clear: left;
+    text-align: center;
+    font-family: french script mt;
+	font-size: 1550%;
+}
+			
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CRUD Operations With PHP and MySql - By Cleartuts</title>
-<link rel="stylesheet" href="style.css" type="text/css" />
+<title></title>
 <script type="text/javascript">
 function edt_id(id)
 {
@@ -37,13 +64,12 @@ function delete_id(id)
 <center>
 
 <div id="header">
- <div id="content">
-    <label>CRUD Operations With PHP and MySql - <a href="http://cleartuts.blogspot.com" target="_blank">By Cleartuts</a></label>
-    </div>
+
 </div>
 
 <div id="body">
  <div id="content">
+ <header>
     <table align="center">
     <tr>
     <th colspan="5"><a href="add_data.php">add data here.</a></th>
@@ -51,12 +77,11 @@ function delete_id(id)
     <th>Name</th>
     <th>Email</th>
     <th>Address</th>
-	<th>Website</th>
     <th>Comment</th>
     <th>Cellphone Number</th>
     <th>Gender</th>
     <th>Nickname</th>
-
+</header>
     <th colspan="2">Operations</th>
     </tr>
     <?php
@@ -73,7 +98,7 @@ function delete_id(id)
 		<td><?php echo $row[5]; ?></td>
 		<td><?php echo $row[6]; ?></td>
 		<td><?php echo $row[7]; ?></td>
-		<td><?php echo $row[8]; ?></td>
+		
   <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
         <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" align="DELETE" /></a></td>
         </tr>

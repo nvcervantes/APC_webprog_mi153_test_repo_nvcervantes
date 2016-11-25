@@ -7,7 +7,6 @@ if(isset($_POST['btn-save']))
  $name = $_POST['name'];
  $email = $_POST['email'];
  $address = $_POST['address'];
- $website = $_POST['website'];
  $comment = $_POST['comment'];
  $cpnum = $_POST['cpnum'];
  $gender = $_POST['gender'];
@@ -15,7 +14,7 @@ if(isset($_POST['btn-save']))
   
  // sql query for inserting data into database
  
-        $sql_query = "INSERT INTO users(name,email,address, website, comment, cpnum, gender, nickname) VALUES('$name','$email','$address',$website, $comment, $cpnum, $gender, $nickname)";
+        $sql_query = "INSERT INTO users(name,email,address, comment, cpnum, gender, nickname) VALUES('$name','$email','$address', '$comment', '$cpnum', '$gender', '$nickname')";
  mysqli_query($con,$sql_query);
         
  
