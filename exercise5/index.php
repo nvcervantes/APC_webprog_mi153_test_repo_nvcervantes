@@ -15,7 +15,7 @@ $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
 <head>
 <style>
 html { 
-  background: url(lastpic.jpg) no-repeat center center fixed; 
+  background: url(another.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -30,7 +30,7 @@ div.container {
 	font-size:large;
 }
 
-header {
+#content {
     padding: 0.3em;
     color: white;
     background-img: lastpic.jpg;
@@ -72,17 +72,17 @@ function delete_id(id)
  <header>
     <table align="center">
     <tr>
-    <th colspan="5"><a href="add_data.php">add data here.</a></th>
+    <th colspan="5"><a href="add_data.php"><font size="20">You may add data here.</font></a></th>
     </tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Address</th>
-    <th>Comment</th>
-    <th>Cellphone Number</th>
-    <th>Gender</th>
-    <th>Nickname</th>
+    <th><font size="10">Name</th></font>
+    <th><font size="10">Email</th></font>
+    <th><font size="10">Address</th></font>
+    <th><font size="10">Comment</th></font>
+    <th><font size="10">Cellphone Number</th></font>
+    <th><font size="10">Gender</th></font>
+    <th><font size="10">Nickname</th></font>
 </header>
-    <th colspan="2">Operations</th>
+    <th colspan="2"><font size="10">Operations</th></font>
     </tr>
     <?php
  $sql_query="SELECT * FROM users";
