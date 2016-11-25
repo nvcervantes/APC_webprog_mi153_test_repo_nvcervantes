@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC>
 <?php
 include_once 'dbconfig.php';
 if(isset($_POST['btn-save']))
@@ -22,16 +22,84 @@ if(isset($_POST['btn-save']))
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<style>
+html { 
+  background: url(another.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+div.container {
+    width: 100%;
+    border: 1px solid black;
+	color: white;
+	text-align: center;
+	clear: center;
+	font-size:large;
+}
+footer {
+	padding: 0.3em;
+    color: white;
+    background-img: lastpic.jpg;
+    clear: left;
+    text-align: center;
+    font-family: french script mt;
+	font-size: 150%;
+ }
+header {
+    padding: 0.3em;
+    color: white;
+    background-img: lastpic.jpg;
+    clear: left;
+    text-align: center;
+    font-family: french script mt;
+	font-size: 150%;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 6em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 1em;
+	clear: left;
+}
+			
+nav ul a {
+    text-decoration: none;	
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px gray;
+    padding: 1em;
+    overflow: hidden
+	font-size: large
+	background-color: beige;
+	font-family: comic sans ms;
+}
+div.form {
+ padding: 70px 0;
+    border: 3px solid green;
+}
+</style>
+</head>
+<body>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CRUD Operations With PHP and MySql - By Cleartuts</title>
-<link rel="stylesheet" href="style.css" type="text/css" />
+<title>Add Data</title>
 </head>
 <body>
 <center>
 
 <div id="header">
  <div id="content">
-    <label>CRUD Operations With PHP and MySql - By Cleartuts</label>
+    <label><font size="10">Add Data</font></label>
     </div>
 </div>
 <div id="body">
@@ -39,7 +107,7 @@ if(isset($_POST['btn-save']))
     <form method="post">
     <table align="center">
     <tr>
-    <td align="center"><a href="index.php">back to main page</a></td>
+    <td align="center"><a href="index.php"><font size="10">Back to main page</font></a></td>
     </tr>
     <tr>
     <td><input type="text" name="name" placeholder="Name" required /></td>
@@ -50,10 +118,6 @@ if(isset($_POST['btn-save']))
     <tr>
     <td><input type="text" name="address" placeholder="Address" required /></td>
     </tr>
-	<tr>
-    <td><input type="text" name="website" placeholder="Website" required /></td>
-    </tr>
-    <tr>
 	<tr>
     <td><input type="text" name="comment" placeholder="Comment" required /></td>
     </tr>
