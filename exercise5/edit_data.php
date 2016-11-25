@@ -4,7 +4,7 @@ if(isset($_GET['edit_id']))
 {
  $sql_query="SELECT * FROM users WHERE user_id=".$_GET['edit_id'];
  $result_set=mysqli_query($con,$sql_query);
- $fetched_row=mysqli_fetch_array($con,$result_set);
+ $fetched_row=mysqli_fetch_array($result_set);
 }
 if(isset($_POST['btn-update']))
 {
@@ -12,7 +12,6 @@ if(isset($_POST['btn-update']))
  $name = $_POST['name'];
  $email = $_POST['email'];
  $address = $_POST['address'];
- $website = $_POST['website'];
  $comment = $_POST['comment'];
  $cpnum = $_POST['cpnum'];
  $gender = $_POST['gender'];
@@ -20,7 +19,7 @@ if(isset($_POST['btn-update']))
 
 
  // sql query for update data into database
- $sql_query = "UPDATE users SET name='$name',email='$email',address='$address',website='$website', comment='$comment',cpnum='$cpnum', gender='$gender', nickname='$nickname' WHERE user_id=".$_GET['edit_id'];
+ $sql_query = "UPDATE users SET name='$name',email='$email',address='$address', comment='$comment',cpnum='$cpnum', gender='$gender', nickname='$nickname' WHERE user_id=".$_GET['edit_id'];
 
  
  // sql query execution function
@@ -48,11 +47,79 @@ if(isset($_POST['btn-cancel']))
  header("Location: index.php");
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CRUD Operations With PHP and MySql - By Cleartuts</title>
+<style>
+html { 
+  background: url(lastpic.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+div.container {
+    width: 100%;
+    border: 1px solid black;
+	color: white;
+	text-align: center;
+	clear: center;
+	font-size:large;
+}
+footer {
+	padding: 0.3em;
+    color: white;
+    background-img: lastpic.jpg;
+    clear: left;
+    text-align: center;
+    font-family: french script mt;
+	font-size: 150%;
+ }
+header {
+    padding: 0.3em;
+    color: white;
+    background-img: lastpic.jpg;
+    clear: left;
+    text-align: center;
+    font-family: french script mt;
+	font-size: 150%;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 6em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 1em;
+	clear: left;
+}
+			
+nav ul a {
+    text-decoration: none;	
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px gray;
+    padding: 1em;
+    overflow: hidden
+	font-size: large
+	background-color: beige;
+	font-family: comic sans ms;
+}
+div.form {
+ padding: 70px 0;
+    border: 3px solid green;
+}
+</style>
+</head>
+<body>
+
+<title>Add Data</title>
 
 </head>
 <body>
@@ -60,7 +127,7 @@ if(isset($_POST['btn-cancel']))
 
 <div id="header">
  <div id="content">
-    <label>CRUD Operations With PHP and MySql - By Cleartuts</label>
+    <label></label>
     </div>
 </div>
 
@@ -76,9 +143,6 @@ if(isset($_POST['btn-cancel']))
     </tr>
     <tr>
     <td><input type="text" name="address" placeholder="Address" value="<?php echo $fetched_row['address']; ?>" required /></td>
-    </tr>
-	<tr>
-    <td><input type="text" name="website" placeholder="Website" value="<?php echo $fetched_row['website']; ?>" required /></td>
     </tr>
 	<tr>
     <td><input type="text" name="comment" placeholder="Comment" value="<?php echo $fetched_row['comment']; ?>" required /></td>
