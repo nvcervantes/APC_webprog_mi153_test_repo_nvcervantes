@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="utf-8">
+
 
 <!--<title>Welcome to my first CodeIgniter application.</title>-->
 
-<style type="text/css">
+<style>
 
 html { 
   background: url(lastpic.jpg) no-repeat center center fixed; 
@@ -80,20 +78,14 @@ div.form {
 
 </head>
 
+<div id = "s">
+<center>
+<a href = "<?php echo base_url(); ?>index.php/user/add_view">Click to Log-In</a>
+</center>
+</div>
+
 <body>
 
-<!--<div id="container">
-    <h1>Welcome to First CodeIgniter Application.</h1>
-    <div id="body">
-        <div class="gallery">
-            <ul>
-            <?php if(!empty($images)): foreach($images as $img): ?>
-               <li><img src="uploads/<?php echo $img['image']; ?>" alt=""></li>
-            <?php endforeach; endif; ?>
-            </ul>
-        </div>
-    </div>
-</div>-->
 <div class="container">
 
 <header>
