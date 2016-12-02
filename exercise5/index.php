@@ -11,7 +11,7 @@ $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
 ?>
 
 <!DOCTYPE html PUBLIC>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <style>
 html { 
