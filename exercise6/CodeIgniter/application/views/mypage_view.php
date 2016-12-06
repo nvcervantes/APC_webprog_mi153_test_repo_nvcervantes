@@ -64,6 +64,12 @@ div.form {
  padding: 70px 0;
     border: 3px solid green;
 }
+table, th, td {
+	border-style:double;
+	border-collapse: collapse;
+	text-align:center;
+	padding: 5px;
+}
 </style>
 </head>
 <body>

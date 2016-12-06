@@ -11,3 +11,4 @@ class Mypage extends CI_Controller {
         $this->load->view('mypage_view');
     }
 }
+?>
