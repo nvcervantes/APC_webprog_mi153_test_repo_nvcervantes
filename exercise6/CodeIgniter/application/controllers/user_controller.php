@@ -1,89 +1,130 @@
 <?php 
-   class User_controller extends CI_Controller {
-	
-      function __construct() { 
-         parent::__construct(); 
-         $this->load->helper('url'); 
-         $this->load->database(); 
-      } 
-  
-      public function index() { 
-         $query = $this->db->get("users"); 
-         $data['records'] = $query->result(); 
-			
-         $this->load->helper('url'); 
-         $this->load->view('user_view',$data); 
-      } 
-  
-      public function add_user_view() { 
-         $this->load->helper('form'); 
-         $this->load->view('user_add'); 
-      } 
-  
-      public function add_user() { 
-         $this->load->model('user_model');
-			
-         $data = array( 
-            'user_id' => $this->input->post('user_id'), 
-            'name' => $this->input->post('name'), 
-            'nickname' => $this->input->post('nickname'), 
-            'email' => $this->input->post('email'), 
-            'address' => $this->input->post('address'), 
-            'gender' => $this->input->post('gender'), 
-            'cpnum' => $this->input->post('cpnum'), 
-            'comment' => $this->input->post('comment') 
+class User_Controller extends CI_Controller {
+ 
+    public function __construct()
+    {
+        parent:: __construct(); 
+        $this->load->model('user_model');
+        $this->load->helper('url_helper');
+    }
+ 
+    public function index()
+    {
+        $data['users'] = $this->user_model->get_users();
+        $data['title'] = 'Users List';
+ 
+        $this->load->view('templates/header', $data);
+        $this->load->view('users/index', $data);
+       
+    }
+ 
+    public function view($slug = NULL)
+    {
+        $data['users_item'] = $this->user_model->get_users($slug);
+        
+        if (empty($data['users_item']))
+        {
+            show_404();
+        }
+ 
 
-         ); 
-			
-         $this->user_model->insert($data); 
-   
-         $query = $this->db->get("users"); 
-         $data['records'] = $query->result(); 
-         $this->load->view('user_view',$data); 
-      } 
+        $this->load->view('templates/header', $data);
+        $this->load->view('users/view', $data);
+
   
-      public function update_user_view() { 
-         $this->load->helper('form'); 
-         $user_id = $this->uri->segment('3'); 
-         $query = $this->db->get_where("users",array("user_id"=>$user_id));
-         $data['records'] = $query->result(); 
-         $data['old_user_id'] = $user_id; 
-         $this->load->view('user_edit',$data); 
-      } 
-  
-      public function update_user(){ 
-         $this->load->model('user_model');
-			
-         $data = array(  
-            'user_id' => $this->input->post('user_id'),
-            'name' => $this->input->post('name'), 
-            'nickname' => $this->input->post('nickname'), 
-            'email' => $this->input->post('email'), 
-            'address' => $this->input->post('address'), 
-            'gender' => $this->input->post('gender'), 
-            'cpnum' => $this->input->post('cpnum'), 
-            'comment' => $this->input->post('comment') 
+    }
+    
+    public function create()
+    {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+ 
+        $data['title'] = 'Create users';
+ 
+        $this->form_validation->set_rules('name', 'name', 'required');
+        $this->form_validation->set_rules('nickname', 'nickname', 'required');
+        $this->form_validation->set_rules('cpnum', 'cpnum', 'required');
+        $this->form_validation->set_rules('email', 'email', 'required');
+ 
+        if ($this->form_validation->run() === FALSE)
+        {
+           $this->load->view('templates/header', $data);
+           $this->load->view('users/create');
+             
+        }
+        else
+        {
+            $this->user_model->set_users();
+            $this->load->view('templates/header', $data);
+            $this->load->view('users/success');
 
 
+        }
+    }
+    
+    public function edit()
+    {
+        $id = $this->uri->segment(3);
+        
+        if (empty($id))
+        {
+            show_404();
+        }
+        
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        
+        $data['title'] = 'Edit users';        
+        $data['users_item'] = $this->user_model->get_users_by_id($id);
+        
+        
+        $this->form_validation->set_rules('name', 'name', 'required');
+        $this->form_validation->set_rules('nickname', 'nickname', 'required');
+        $this->form_validation->set_rules('cpnum', 'Cpnum', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+ 
+        if ($this->form_validation->run() === FALSE)
+        {
+            $this->load->view('templates/header', $data);
+            $this->load->view('users/edit', $data);
 
-         ); 
-			
-         $old_user_id = $this->input->post('old_user_id'); 
-         $this->user_model->update($data,$old_user_id); 
-			
-         $query = $this->db->get("users"); 
-         $data['records'] = $query->result(); 
-         $this->load->view('user_view',$data); 
-      } 
-  
-      public function delete_user() { 
-         $this->load->model('user_model'); 
-         $user_id = $this->uri->segment('3'); 
-         $this->user_model->delete($user_id); 
-   
-         $query = $this->db->get("users"); 
-         $data['records'] = $query->result(); 
-         $this->load->view('user_view',$data); 
-      } 
-   } 
-?>
+
+ 
+        }
+        else
+        {
+            $this->user_model->set_users($id);
+            //$this->load->view('news/success');
+            redirect( base_url() . 'index.php/users');
+        }
+    }
+    
+    public function delete()
+    {
+        $id = $this->uri->segment(3);
+        
+        if (empty($id))
+        {
+            show_404();
+        }
+                
+        $users_item = $this->user_model->get_users_by_id($id);
+        
+        $this->user_model->delete_users($id);        
+        redirect( base_url() . 'index.php/user_controller');        
+    }
+
+
+
+
+     public function mypage()
+    {
+     
+       
+        //load view and pass the data
+        
+        $this->load->view('mypage_view');
+    }
+
+    
+}
