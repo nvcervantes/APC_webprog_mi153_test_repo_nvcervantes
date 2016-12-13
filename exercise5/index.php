@@ -28,6 +28,8 @@ div.container {
 	text-align: center;
 	clear: center;
 	font-size:large;
+	    font-family: french script mt;
+
 }
 
 #content {
@@ -38,6 +40,16 @@ div.container {
     text-align: center;
     font-family: french script mt;
 	font-size: 1550%;
+}
+table, th, td {
+	border-style:double;
+	border-collapse: collapse;
+	text-align:center;
+	padding: 5px;
+}
+div.header {
+	    font-family: french script mt;
+
 }
 			
 </style>
@@ -66,13 +78,13 @@ function delete_id(id)
 <div id="header">
 
 </div>
+    <th colspan="5"><a href="add_data.php"><font size="20">You may add data here.</font></a></th>
 
 <div id="body">
  <div id="content">
  <header>
     <table align="center">
     <tr>
-    <th colspan="5"><a href="add_data.php"><font size="20">You may add data here.</font></a></th>
     </tr>
     <th><font size="10">Name</th></font>
     <th><font size="10">Email</th></font>
