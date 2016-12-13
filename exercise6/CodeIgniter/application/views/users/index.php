@@ -2,7 +2,6 @@
  
 	<head>
 	<title>My Home Page</title>
-    <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/style.css"/>
 
 <style>
 html { 
