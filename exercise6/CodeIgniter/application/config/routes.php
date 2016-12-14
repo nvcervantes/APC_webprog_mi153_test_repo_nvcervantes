@@ -59,3 +59,5 @@ $route['users/edit/(:any)'] = 'user_controller/edit/$1';
  
 $route['users/view/(:any)'] = 'user_controller/view/$1';
 $route['users/(:any)'] = 'user_controller/view/$1';
+
+
