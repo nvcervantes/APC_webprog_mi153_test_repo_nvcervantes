@@ -162,7 +162,7 @@ table, th, td {
 	</tr>
 </table>
 <br>	
-		<input id="btn" type="submit" name="btn-save" onclick="location.href='mypage';">
+            <input type="submit" name="submit" value="Create Users item" />
 </form>
 </center>
 </div>

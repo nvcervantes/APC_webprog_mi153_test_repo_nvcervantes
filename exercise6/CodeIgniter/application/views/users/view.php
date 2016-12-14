@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 
 <html lang = "en">
  
@@ -93,7 +93,7 @@ echo'<h1>'."NickName: ".'</label>'.$users_item['nickname'].'</h2>' ;
 
 echo'<h1>'."Email: ".'</label>'.$users_item['email'].'</h2>' ;
 
-echo'<h1>'."Home Address: ".'</label>'.$users_item['hadd'].'</h2>' ;
+echo'<h1>'."Home Address: ".'</label>'.$users_item['address'].'</h2>' ;
 
 echo'<h1>'."Gender: ".'</label>'.$users_item['gender'].'</h2>' ;
 

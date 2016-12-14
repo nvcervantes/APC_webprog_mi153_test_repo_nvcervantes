@@ -97,7 +97,7 @@ table, th, td {
             <td><?php echo $users_item['name']; ?></td> 
             <td><?php echo $users_item['nickname']; ?></td>
             <td><?php echo $users_item['email']; ?></td>
-            <td><?php echo $users_item['hadd']; ?></td>
+            <td><?php echo $users_item['address']; ?></td>
             <td><?php echo $users_item['gender']; ?></td>
             <td><?php echo $users_item['cpnum']; ?></td>
             <td><?php echo $users_item['comment']; ?></td>
