@@ -77,8 +77,19 @@ table, th, td {
 	text-align:center;
 	padding: 5px;
 }
+      #prof{
+    width: 1300px;
+    height: 550px;
+    background: rgba(0,0,0,0.1);
+    padding: 5px;
+    color: black;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
 </style>
-   </head> 
+    </head> 
 	
    <body> 
 

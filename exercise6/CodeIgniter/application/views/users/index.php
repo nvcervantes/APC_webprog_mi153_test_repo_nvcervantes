@@ -2,6 +2,7 @@
  
 	<head>
 	<title>My Home Page</title>
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/style.css"/>
 
 <style>
 html { 
@@ -74,6 +75,17 @@ table, th, td {
 	text-align:center;
 	padding: 5px;
 }
+      #prof{
+    width: 1300px;
+    height: 550px;
+    background: rgba(0,0,0,0.1);
+    padding: 5px;
+    color: white;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
 </style>
 	
 <body> 
@@ -85,7 +97,7 @@ table, th, td {
         <td><strong>Name</strong></td>
         <td><strong>Nickname</strong></td>
         <td><strong>Email</strong></td>
-        <td><strong>home address</strong></td>
+        <td><strong>Home Address</strong></td>
         <td><strong>Gender</strong></td>
         <td><strong>Cellphone number</strong></td>
         <td><strong>Comment</strong></td>
@@ -97,7 +109,7 @@ table, th, td {
             <td><?php echo $users_item['name']; ?></td> 
             <td><?php echo $users_item['nickname']; ?></td>
             <td><?php echo $users_item['email']; ?></td>
-            <td><?php echo $users_item['address']; ?></td>
+            <td><?php echo $users_item['hadd']; ?></td>
             <td><?php echo $users_item['gender']; ?></td>
             <td><?php echo $users_item['cpnum']; ?></td>
             <td><?php echo $users_item['comment']; ?></td>

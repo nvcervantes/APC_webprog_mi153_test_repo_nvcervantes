@@ -1,4 +1,6 @@
 <head>
+<link rel="stylesheet" type="text/css" href="<?=base_url()?>css/style.css"/>
+
 <style>
 html { 
   background: url(css/uploads/lastpic.jpg) no-repeat center center fixed; 
@@ -70,6 +72,9 @@ table, th, td {
 	text-align:center;
 	padding: 5px;
 }
+
+<link rel="stylesheet" href="<?php echo base_url('css/style.css');?>">
+
 </style>
 </head>
 <body>
@@ -83,7 +88,7 @@ table, th, td {
 <nav>
   <ul>
     <li><a href="#">&#9829</a></li>
-    <img src="pic.jpg" alt="Mountain View" style="width:230px;height:300px;">
+		<li> <img src="<?php echo base_url('css/uploads/pic.jpg')?>" width ="230" height ="300" /></li>
   </ul>
 </nav>
 
@@ -126,17 +131,8 @@ table, th, td {
 
 
 </div>
-<div class="container">
-<a> <href="https://www.facebook.com/">
-  <img border="0" alt="fb" src="<?php echo base_url('images/fb.png');?>" width=100 height=100> </a> 
-  
-</a> 
-<a href="https://twitter.com/">
-  <img src="twitter.png" style="width:50px;height:42px;border:0;"> 
-</a> 
-<a href="https://www.instagram.com/">
-  <img src="insta.png" style="width:42px;height:42px;border:0;"> 
-</a>
+
+
 
 <div class="container2"> 
 

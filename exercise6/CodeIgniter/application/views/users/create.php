@@ -8,161 +8,71 @@
       <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/style.css"/>
 
 
-  <style>
-html { 
-  background: url(css/uploads/lastpic.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-div.container {
-    width: 100%;
-    border: 1px solid black;
-	color: white;
-	text-align: center;
-	clear: center;
-	font-size:large;
-}
-footer {
-	padding: 0.3em;
+      <style>
+
+#prof{
+    width: 1300px;
+    height: 420px;
+    background: rgba(0,0,0,0.1);
+    padding: 5px;
     color: white;
-    background-img: lastpic.jpg;
-    clear: left;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
     text-align: center;
-    font-family: french script mt;
-	font-size: 150%;
- }
-header {
-    padding: 0.3em;
-    color: white;
-    background-img: lastpic.jpg;
-    clear: left;
-    text-align: center;
-    font-family: french script mt;
-	font-size: 150%;
 }
 
-nav {
-    float: left;
-    max-width: 160px;
-    margin: 0;
-    padding: 6em;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 1em;
-	clear: left;
-}
-			
-nav ul a {
-    text-decoration: none;	
-}
-
-article {
-    margin-left: 170px;
-    border-left: 1px gray;
-    padding: 1em;
-    overflow: hidden
-	font-size: large
-	background-color: beige;
-	font-family: comic sans ms;
-}
-div.form {
- padding: 70px 0;
-    border: 3px solid green;
-}
-table, th, td {
-	border-style:double;
-	border-collapse: collapse;
-	text-align:center;
-	padding: 5px;
-}
-</style>
+      </style>
    </head> 
    <body> 
 
 
    <div id ="prof">
    <center>
-<p><span class="error"><u>* required field.</u></p>
-
 <?php echo validation_errors(); ?>
- <?php echo form_open('users/create'); ?>    
-   
-<table BORDER="1" BORDERCOLOR="BLACK" cellpadding="5px">
-	<tr> 
-		<td>
-			<label for="name">Name:</label>
-		</td>
-		<td>
-			<input type="text" name="name" size="30" />
-			<span class="error">*</span>
-		</td>
-	</tr>
-	
-	<tr>
-		<td>
-			<label for="nickname">Nickname:</label>
-		</td>
-		<td>
-			<input type="text" name="nickname" size="30" />
-			<span class="error">*</span>
-		</td>
-	</tr>
-		
-	<tr>
-		<td>
-			<label for="email">E-mail:</label>
-		</td>
-		<td>
-			<input type="text" name="email" size="30" />
-			<span class="error">*</span>
-		</td>
-	</tr>
-		
-	<tr>
-		<td>
-			<label for="sddress">Home Address:</label>
-		</td>
-		<td>
-			<textarea name="address" rows="5" cols="30"></textarea>
-		</td>
-	</tr>
+ 
+<?php echo form_open('users/create'); ?>    
+    		<br>
+            <br>
+        
+            <label>Name</label>
+            <input type="input" name="name" size="20" />
+            <br>
+            <br>
+        
+            <label>NickName</label>
+            <input type="input" name="nickname" size="20" />
+        	<br>
+            <br>
+        
+			<label>Email</label>
+            <input type="input" name="email" size="20" />
+        	<br>
+            <br>
 
-	<tr>
-		<td>
-			<label for="gender">Gender:</label>
-		</td>
-		<td>
-			<input type="radio" name="gender"<?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-			<input type="radio" name="gender"<?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-			<span class="error">*</span>
-		</td>
-	</tr>
+            <label>Home Address</label>
+            <input type="input" name="hadd" size="20" />
+            <br>
+            <br>
 
-	<tr>
-		<td>
-			<label for="number">Mobile Number:</label>
-		</td>
-		<td>
-			<input type="text" name="number" size="30" />
-			<span class="error">*</span>
-		</td>
-	</tr>	
-	
-	<tr>
-		<td>
-			<label for="comment">Comment:</label>
-		</td>
-		<td>
-			<textarea name="comment" rows="5" size="30"></textarea>
-		</td>
-	</tr>
-</table>
-<br>	
+            <label>Gender</label>
+            <input type="input" name="gender" size="20" />
+    		<br>
+            <br>    
+
+            <label>Cellphone number</label>
+            <input type="input" name="cpnum" size="20" />
+        	<br>
+            <br>
+
+            <label>Comment</label>
+            <input type="input" name="comment" size="20" />
+	        <br>
+            <br>
+            
             <input type="submit" name="submit" value="Create Users item" />
+        
+    
 </form>
 </center>
 </div>

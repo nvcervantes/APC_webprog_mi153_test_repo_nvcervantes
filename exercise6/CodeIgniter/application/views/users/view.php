@@ -78,6 +78,17 @@ table, th, td {
 	text-align:center;
 	padding: 5px;
 }
+      #prof{
+    width: 1300px;
+    height: 550px;
+    background: rgba(0,0,0,0.1);
+    padding: 5px;
+    color: white;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
 </style>
    </head> 
    <body> 
@@ -89,7 +100,7 @@ table, th, td {
 
 echo'<h1>'."Name: ".'</label>'.$users_item['name'].'</h2>' ;
 
-echo'<h1>'."NickName: ".'</label>'.$users_item['nickname'].'</h2>' ;
+echo'<h1>'."Nickname: ".'</label>'.$users_item['nickname'].'</h2>' ;
 
 echo'<h1>'."Email: ".'</label>'.$users_item['email'].'</h2>' ;
 

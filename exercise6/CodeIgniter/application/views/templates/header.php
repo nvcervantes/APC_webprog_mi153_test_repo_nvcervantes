@@ -86,7 +86,7 @@ table, th, td {
 <nav>
   <ul>
     <li><a href="#">&#9829</a></li>
-    <img src="pic.jpg" alt="Mountain View" style="width:230px;height:300px;">
+		<li> <img src="<?php echo base_url('css/uploads/pic.jpg')?>" width ="230" height ="300" /></li>
   </ul>
 </nav>
 
@@ -131,17 +131,7 @@ table, th, td {
 <center>
 </center>
 </div>
-<div class="container">
-<a href="https://www.facebook.com/">
-  <img src="fb.png" style="width:50px;height:42px;border:0;"> 
-  
-</a> 
-<a href="https://twitter.com/">
-  <img src="twitter.png" style="width:50px;height:42px;border:0;"> 
-</a> 
-<a href="https://www.instagram.com/">
-  <img src="insta.png" style="width:42px;height:42px;border:0;"> 
-</a>
+
 
 <div class="container2"> 
 
