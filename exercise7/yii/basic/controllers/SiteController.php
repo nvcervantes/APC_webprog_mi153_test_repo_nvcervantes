@@ -122,4 +122,20 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionNet()
+    {
+        return $this->render('net');
+    }
+
+     public function actionWorks()
+    {
+        return $this->render('works');
+    }
+
+
+    public function actionTrivia()
+    {
+        return $this->render('trivia');
+    }
 }
