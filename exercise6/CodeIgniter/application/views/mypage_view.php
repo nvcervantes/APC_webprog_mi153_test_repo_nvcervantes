@@ -119,6 +119,10 @@ table, th, td {
 </div>
 </div>
 
+ <div>
+ <li><a href="<?php echo site_url('users'); ?>">Form</a></a></li>
+<li><a href="<?php echo site_url('users/create'); ?>">Add User</a></li>
+</div>
 
 
 </div>
