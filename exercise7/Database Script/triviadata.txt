@@ -1,0 +1,11 @@
+insert into trivia values (1,'My favorite nocturnal hobby is', 'READING BOOKS'),
+(2,'One of my guilty pleasures is','Overeating sweets'),
+(3,'I spend most of my time', 'Reading books'),
+(4,'My first pup's name is', 'TOBY'),
+(5,'One thing about me that not everyone knows', 'I am an introvert'),
+(6,'One thing about me that everyone knows:', 'I am extremely girly'),
+(7,'My favorite food is', 'PIZZA'),
+(8,'My most favorite person in the world is','My Mommy'),
+(9,'Favorite color:', 'Pink'),
+(10,'I hate', 'going to parties at night');
+

@@ -1,0 +1,4 @@
+CREATE TABLE `trivia` (
+`trivia_id` INT (10) NOT NULL PRIMARY KEY,
+`trivia` VARCHAR (45) NOT NULL,
+`answer` VARCHAR (45) NOT NULL
