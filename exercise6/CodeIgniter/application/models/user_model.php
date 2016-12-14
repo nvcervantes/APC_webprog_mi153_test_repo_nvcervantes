@@ -41,7 +41,7 @@ class User_model extends CI_Model {
          'email' => $this->input->post('email'),
          'gender' => $this->input->post('gender'),
          'nickname' => $this->input->post('nickname'),
-         'address' => $this->input->post('address'),
+         'hadd' => $this->input->post('hadd'),
          'cpnum' => $this->input->post('cpnum'),
         'slug' => $slug,
         'comment' => $this->input->post('comment')
