@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?= $form->field($model, 'user_id') ?>
 
     <?= $form->field($model, 'name') ?>
 
@@ -30,8 +30,6 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'cpnum') ?>
 
     <?php // echo $form->field($model, 'comment') ?>
-
-    <?php // echo $form->field($model, 'slug') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

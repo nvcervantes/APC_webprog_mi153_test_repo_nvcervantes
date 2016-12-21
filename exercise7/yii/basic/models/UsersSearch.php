@@ -18,8 +18,8 @@ class UsersSearch extends Users
     public function rules()
     {
         return [
-            [['id', 'cpnum'], 'integer'],
-            [['name', 'nickname', 'email', 'hadd', 'gender', 'comment', 'slug'], 'safe'],
+            [['user_id'], 'integer'],
+            [['name', 'nickname', 'email', 'hadd', 'gender', 'cpnum', 'comment'], 'safe'],
         ];
     }
 
@@ -59,8 +59,7 @@ class UsersSearch extends Users
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'cpnum' => $this->cpnum,
+            'user_id' => $this->user_id,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
@@ -68,8 +67,8 @@ class UsersSearch extends Users
             ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'hadd', $this->hadd])
             ->andFilterWhere(['like', 'gender', $this->gender])
-            ->andFilterWhere(['like', 'comment', $this->comment])
-            ->andFilterWhere(['like', 'slug', $this->slug]);
+            ->andFilterWhere(['like', 'cpnum', $this->cpnum])
+            ->andFilterWhere(['like', 'comment', $this->comment]);
 
         return $dataProvider;
     }

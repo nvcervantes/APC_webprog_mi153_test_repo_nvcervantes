@@ -1,39 +1,15 @@
 <?php
-
 use yii\helpers\Html;
-use yii\grid\GridView;
-
-/* @var $this yii\web\View */
-/* @var $searchModel app\models\UsersSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
-$this->title = 'Users';
-$this->params['breadcrumbs'][] = $this->title;
+use yii\widgets\LinkPager;
 ?>
-<div class="users-index">
+<h1>Trivia</h1>
+<ul>
+<?php foreach ($trivia as $trivias): ?>
+    <li>
+        <?= Html::encode("{$trivias->trivia} ({$trivias->answer})") ?>:
+    </li>
+<?php endforeach; ?>
+</ul>
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<?= LinkPager::widget(['pagination' => $pagination]) ?>
 
-    <p>
-        <?= Html::a('Create Users', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'user_id',
-            'name',
-            'nickname',
-            'email:email',
-            'hadd',
-            // 'gender',
-            // 'cpnum',
-            // 'comment',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-</div>

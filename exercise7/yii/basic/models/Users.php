@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "users".
  *
- * @property integer $id
+ * @property integer $user_id
  * @property string $name
  * @property string $nickname
  * @property string $email
@@ -15,7 +15,6 @@ use Yii;
  * @property string $gender
  * @property string $cpnum
  * @property string $comment
- * @property string $slug
  */
 class Users extends \yii\db\ActiveRecord
 {
@@ -33,10 +32,9 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nickname', 'email', 'gender', 'cpnum', 'slug'], 'required'],
-            [['cpnum'], 'integer'],
-            [['comment'], 'string'],
-            [['name', 'nickname', 'email', 'hadd', 'gender', 'slug'], 'string', 'max' => 128],
+            [['name', 'nickname', 'email', 'gender', 'cpnum'], 'required'],
+            [['name', 'email', 'hadd', 'cpnum', 'comment'], 'string', 'max' => 45],
+            [['nickname', 'gender'], 'string', 'max' => 25],
         ];
     }
 
@@ -46,15 +44,14 @@ class Users extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'user_id' => 'User ID',
             'name' => 'Name',
             'nickname' => 'Nickname',
             'email' => 'Email',
-            'hadd' => 'Address',
+            'hadd' => 'Home Address',
             'gender' => 'Gender',
-            'cpnum' => 'Cpnum',
+            'cpnum' => 'Cellphone number',
             'comment' => 'Comment',
-            'slug' => 'Slug',
         ];
     }
 }
