@@ -23,21 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
   <p>Hello, you!</p>
   <hr>
 </div>
-<div class="container1">
-<h1>Some facts about me &#9786</h1>
-<p id="hobbyr">What is my favorite hobby?</p>
-	<button type="button" onclick="document.getElementById('hobbyr').innerHTML = 'Reading has always been and will forever be my favorite hobby.'">Fave Hobby</button>
-<p id="gp">What is my guilty pleasure?</p>
-	<button type="button" onclick="document.getElementById('gp').innerHTML = 'Definitely Chocolates.'">Guilty Pleasure...</button>
-<p id="pup">What is the name of my first puppy?</p>
-	<button type="button" onclick="document.getElementById('pup').innerHTML = 'Toby. &#9829'">First Pup!</button>
-<p id="cd">What is my childhood dream?</p>
-	<button type="button" onclick="document.getElementById('cd').innerHTML = 'To be a chemist.'">Childhood Dream</button>
-<p id="plan">What do I want to be in the future?</p>
-	<button type="button" onclick="document.getElementById('plan').innerHTML = 'To be an accomplished person doing what I love and not settling for less.'">Ultimate Goal &#9829</button>
-	<p></p>
-	<hr>
-</div>
+
 
 <div>
 <!--<h1>Some facts about me &#9786</h1>
