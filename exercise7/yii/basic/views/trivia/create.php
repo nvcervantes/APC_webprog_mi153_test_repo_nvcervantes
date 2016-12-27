@@ -10,6 +10,7 @@ $this->title = 'Create Trivia';
 $this->params['breadcrumbs'][] = ['label' => 'Trivias', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="trivia-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
