@@ -1,10 +1,10 @@
-body {
-   
+body {   
 background-image: url('http://localhost/yii/web/uploads/lastpic.jpg');
 font-family:"Comic Sans MS", monospace;
  border:dashed;
  background-size:cover;
 }
+
 div.container {
     width: 100%;
     border: 1px solid black;
@@ -13,6 +13,7 @@ div.container {
 	clear: center;
 	font-size:large;
 }
+
 div.container1 {
     width: 100%;
     border: 1px solid black;
@@ -21,6 +22,7 @@ div.container1 {
 	clear: center;
 	font-size:large;
 }
+
 footer {
 	padding: 0.3em;
     color: white;
@@ -134,11 +136,13 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
 table a
 {
  text-decoration:none;
  color:hotpink;
 }
+
 table,td,th
 {
  border-collapse:collapse;
@@ -146,6 +150,7 @@ table,td,th
  padding:20px;
 color:hotpink;
 }
+
 table td input
 {
  width:97%;
