@@ -1,11 +1,10 @@
-insert into trivia values (1,'Rafael Furuya is Half Filipino and half', 'japanese'),
-(2,'Rafael Furuya is taking what course in college','IT'),
-(3,'Rafael Furuya was born and raised in the', 'Philippines'),
-(4,'Rafael Furuya spends most of his free time in', 'Social Media'),
-(5,'Rafael Furuya is currently into', 'Photoediting'),
-(6,'Rafael Furuya is a ___ student', 'College'),
-(7,'Rafael Furuya is interested in', 'handheld console'),
-(8,'Rafael Furuya likes travelling with','friends'),
-(9,'Rafael Furuya feel recharged and free when with', 'friends'),
-(10,'Rafael Furuya occasionally', 'read books');
-
+insert into trivia values (1,'My favorite nocturnal hobby is', 'READING BOOKS'),
+(2,'One of my guilty pleasures is','Overeating sweets'),
+(3,'I spend most of my time', 'Reading books'),
+(4,'My first pup's name is', 'TOBY'),
+(5,'One thing about me that not everyone knows', 'I am an introvert'),
+(6,'One thing about me that everyone knows:', 'I am extremely girly'),
+(7,'My favorite food is', 'PIZZA'),
+(8,'My most favorite person in the world is','My Mommy'),
+(9,'Favorite color:', 'Pink'),
+(10,'I hate', 'going to parties at night');
