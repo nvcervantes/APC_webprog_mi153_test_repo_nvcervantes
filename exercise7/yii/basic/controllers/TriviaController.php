@@ -11,7 +11,6 @@ use yii\db\Expression;
 use yii\data\Pagination;
 
 
-
 class TriviaController extends Controller
 {
    
@@ -32,7 +31,7 @@ class TriviaController extends Controller
 
        
 
-         
+ 
 
 shuffle($trivia);
         return $this->render('index', ['trivia'=>$trivia,'pagination'=>$pagination,
