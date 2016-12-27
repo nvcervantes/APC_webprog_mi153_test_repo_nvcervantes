@@ -12,6 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * UsersController implements the CRUD actions for Users model.
  */
+ 
 class UsersController extends Controller
 {
     /**
@@ -33,6 +34,7 @@ class UsersController extends Controller
      * Lists all Users models.
      * @return mixed
      */
+	 
     public function actionIndex()
     {
         $searchModel = new UsersSearch();
@@ -49,6 +51,7 @@ class UsersController extends Controller
      * @param integer $id
      * @return mixed
      */
+	 
     public function actionView($id)
     {
         return $this->render('view', [
@@ -61,6 +64,7 @@ class UsersController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
+	 
     public function actionCreate()
     {
         $model = new Users();
@@ -80,6 +84,7 @@ class UsersController extends Controller
      * @param integer $id
      * @return mixed
      */
+	 
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -99,6 +104,7 @@ class UsersController extends Controller
      * @param integer $id
      * @return mixed
      */
+	 
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -113,6 +119,7 @@ class UsersController extends Controller
      * @return Users the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
+	 
     protected function findModel($id)
     {
         if (($model = Users::findOne($id)) !== null) {
